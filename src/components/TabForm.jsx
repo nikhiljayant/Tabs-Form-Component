@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 // Components
 import Profile from "./Profile";
 import Interests from "./Interests";
 import Settings from "./Settings";
 
 const TabForm = () => {
-  // 26:20
+  const [activeTab, setActiveTab] = useState(0);
+
   const tabs = [
     { name: "Profile", component: <Profile /> },
     { name: "Interests", component: <Interests /> },
     { name: "Settings", component: <Settings /> },
   ];
+
+  const activeTabComponent = tabs[activeTab].component;
+
   return (
     <div>
       <div className="heading-container">
@@ -19,6 +23,9 @@ const TabForm = () => {
             {t.name}
           </div>
         ))}
+      </div>
+      <div className="tab-body">
+        {activeTabComponent}
       </div>
     </div>
   );
