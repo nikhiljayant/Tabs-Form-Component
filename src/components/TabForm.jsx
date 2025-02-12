@@ -18,8 +18,8 @@ const TabForm = () => {
   return (
     <div>
       <div className="heading-container">
-        {tabs.map((t) => (
-          <div key={t.name} className="heading">
+        {tabs.map((t, index) => (
+          <div key={t.name} className="heading" onClick={() => setActiveTab(index)}>
             {t.name}
           </div>
         ))}
