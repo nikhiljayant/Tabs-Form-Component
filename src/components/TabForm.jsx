@@ -16,17 +16,20 @@ const TabForm = () => {
   const activeTabComponent = tabs[activeTab].component;
 
   return (
-    <div>
-      <div className="heading-container">
+    <div className="h-screen w-screen flex flex-col items-center justify-center">
+      <div className="flex gap-5">
         {tabs.map((t, index) => (
-          <div key={t.name} className="heading" onClick={() => setActiveTab(index)}>
+          <button
+            key={t.name}
+            type="button"
+            className={`border-b-2 px-4 py-2 mb-[10px] cursor-pointer transition-all duration-300 ease-in-out ${activeTab === index ? "border-green-500 text-green-500" : "border-slate-300 text-slate-500"}`}
+            onClick={() => setActiveTab(index)}
+          >
             {t.name}
-          </div>
+          </button>
         ))}
       </div>
-      <div className="tab-body">
-        {activeTabComponent}
-      </div>
+      <div className="w-[50%] border py-[10px] px-[20px] rounded-lg">{activeTabComponent}</div>
     </div>
   );
 };
