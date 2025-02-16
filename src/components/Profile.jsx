@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+// Components
+import FormInput from "./reusable_components/FormInput";
 
 const Profile = () => {
   return (
-    <div>Profile</div>
-  )
-}
+    <div>
+      <FormInput />
+    </div>
+  );
+};
 
-export default Profile
+export default Profile;
