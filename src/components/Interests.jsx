@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Interests = () => {
+const Interests = ({ data, setData }) => {
   return (
     <div>Interests</div>
   )

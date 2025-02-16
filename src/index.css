@@ -17,8 +17,8 @@
 /* Input */
 .input-parent {
   position: relative;
-  height: 80px;
-  line-height: 80px;
+  height: 60px;
+  line-height: 60px;
 }
 input {
   position: absolute;
@@ -26,34 +26,32 @@ input {
   outline: none;
   font-size: 2.2em;
   padding: 0 30px;
-  line-height: 80px;
+  height: 60px;
   border-radius: 10px;
-  /* border: 2px solid #f0ffff; */
   background: transparent;
   transition: 0.1s ease;
   z-index: 1111;
+  outline: none;
 }
 .custom-placeholder {
   position: absolute;
-  font-size: 1.6em;
-  color: #f0ffff;
+  font-size: 16px;
   padding: 0 25px;
-  margin: 0 20px;
-  /* background-color: #1c2841; */
+  margin: 0 15px;
+  background-color: white;
   transition: 0.2s ease;
-  z-index: 9999;
+  height: 60px;
+  z-index: 0;
 }
-input:focus,
-input:valid {
-  color: #66ff00;
-  border: 4px solid #66ff00;
+input:focus {
+  color: #00C951;
+  border: 2px solid #00C951;
 }
-input:focus + .custom-placeholder,
-input:valid + .custom-placeholder {
-  color: #66ff00;
-  height: 30px;
+input:focus + .custom-placeholder {
+  color: #00C951;
+  height: 60px;
   line-height: 30px;
   padding: 0 12px;
-  transform: translate(-15px,-16px) scale(0.88);
+  transform: translate(-15px, -16px) scale(0.88);
   z-index: 1111;
 }
