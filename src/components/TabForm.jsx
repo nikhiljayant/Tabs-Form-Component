@@ -23,10 +23,15 @@ const TabForm = () => {
   });
 
   const tabs = [
-    { name: "Profile", component: <Profile data={data} setData={setData} /> },
+    {
+      name: "Profile",
+      component: (
+        <Profile data={data} setData={setData} setNextStep={setActiveTab} />
+      ),
+    },
     {
       name: "Interests",
-      component: <Interests data={data} setData={setData} />,
+      component: <Interests data={data} setData={setData} setNextStep={setActiveTab} />,
     },
     { name: "Settings", component: <Settings data={data} setData={setData} /> },
   ];

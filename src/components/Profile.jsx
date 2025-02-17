@@ -2,7 +2,7 @@ import React from "react";
 // Components
 import FormInput from "./reusable_components/FormInput";
 
-const Profile = ({ data, setData }) => {
+const Profile = ({ data, setData, setNextStep = () => {} }) => {
   const handleDataChange = (e) => {
     setData({
       ...data,
@@ -26,6 +26,16 @@ const Profile = ({ data, setData }) => {
         onChange={handleDataChange}
         placeholder="Enter your age"
       />
+
+      <div className="flex justify-end">
+        <button
+          type="button"
+          className="rounded-full bg-blue-400 text-white px-7 py-2 cursor-pointer"
+          onClick={() => setNextStep(1)}
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 };

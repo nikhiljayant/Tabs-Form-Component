@@ -24,9 +24,9 @@ input {
   position: absolute;
   width: 100%;
   outline: none;
-  font-size: 2.2em;
+  font-size: 18px;
   padding: 0 30px;
-  height: 60px;
+  height: 100%;
   border-radius: 10px;
   background: transparent;
   transition: 0.1s ease;
@@ -37,18 +37,18 @@ input {
   position: absolute;
   font-size: 16px;
   padding: 0 25px;
-  margin: 0 15px;
-  background-color: white;
+  margin: 0 10px;
+  /* background-color: white; */
   transition: 0.2s ease;
-  height: 60px;
+  /* height: 40px; */
   z-index: 0;
 }
 input:focus {
-  color: #00C951;
-  border: 2px solid #00C951;
+  /* color: #00C951; */
+  border: 2px solid #51A2FF;
 }
 input:focus + .custom-placeholder {
-  color: #00C951;
+  color: #51A2FF;
   height: 60px;
   line-height: 30px;
   padding: 0 12px;

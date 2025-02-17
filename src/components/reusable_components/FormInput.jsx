@@ -8,7 +8,7 @@ const FormInput = ({
   placeholder = "",
 }) => {
   return (
-    <div className="input-parent">
+    <div className="relative h-[50px] leading-[50px]">
       <input
         type={type}
         name={name}
@@ -16,7 +16,13 @@ const FormInput = ({
         onChange={onChange}
         className="border-zinc-300 border"
       />
-      <div className="custom-placeholder text-zinc-300">{placeholder}</div>
+      <div
+        className={`custom-placeholder ${
+          value === "" ? "text-zinc-300" : "text-white"
+        }`}
+      >
+        <span className="bg-white px-[5px]">{placeholder}</span>
+      </div>
     </div>
   );
 };
