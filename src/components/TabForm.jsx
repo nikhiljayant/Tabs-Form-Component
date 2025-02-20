@@ -17,8 +17,7 @@ const TabForm = () => {
       sports: "",
     },
     settings: {
-      theme: "",
-      notifications: "",
+      theme: "light",
     },
   });
 
