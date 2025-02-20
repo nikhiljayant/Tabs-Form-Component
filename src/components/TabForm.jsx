@@ -17,7 +17,7 @@ const TabForm = () => {
       sports: "",
     },
     settings: {
-      theme: "light",
+      theme: localStorage.getItem("theme") ?? "light",
     },
   });
 
@@ -30,7 +30,9 @@ const TabForm = () => {
     },
     {
       name: "Interests",
-      component: <Interests data={data} setData={setData} setNextStep={setActiveTab} />,
+      component: (
+        <Interests data={data} setData={setData} setNextStep={setActiveTab} />
+      ),
     },
     { name: "Settings", component: <Settings data={data} setData={setData} /> },
   ];
@@ -38,7 +40,13 @@ const TabForm = () => {
   const activeTabComponent = tabs[activeTab].component;
 
   return (
-    <div className="h-screen w-screen flex flex-col items-center justify-center">
+    <div
+      className={`h-screen w-screen flex flex-col items-center justify-center ${
+        data.settings.theme === "dark"
+          ? "bg-slate-900 text-white"
+          : "bg-white text-slate-900"
+      }`}
+    >
       <div className="flex gap-5">
         {tabs.map((t, index) => (
           <button

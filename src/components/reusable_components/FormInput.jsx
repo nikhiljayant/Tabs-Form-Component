@@ -21,7 +21,7 @@ const FormInput = ({
           value === "" ? "text-zinc-300" : "text-white"
         }`}
       >
-        <span className="bg-white px-[5px]">{placeholder}</span>
+        <span className={`${localStorage.getItem("theme") === "dark" ? "bg-[#0F172B]" : "bg-white"} px-[5px]`}>{placeholder}</span>
       </div>
     </div>
   );

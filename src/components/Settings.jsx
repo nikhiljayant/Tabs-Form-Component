@@ -15,12 +15,13 @@ const Settings = ({ data, setData }) => {
               name="theme"
               value="light"
               checked={data?.settings?.theme === "light"}
-              onChange={(e) =>
+              onChange={(e) => {
                 setData({
                   ...data,
                   settings: { theme: e.target.value },
-                })
-              }
+                });
+                localStorage.setItem("theme", e.target.value);
+              }}
               className="!h-[20px] !static !w-[15px]"
             />
             <label for="kraken">Light</label>
@@ -32,12 +33,13 @@ const Settings = ({ data, setData }) => {
               value="dark"
               checked={data?.settings?.theme === "dark"}
               className="!h-[20px] !static !w-[15px]"
-              onChange={(e) =>
+              onChange={(e) => {
                 setData({
                   ...data,
                   settings: { theme: e.target.value },
-                })
-              }
+                });
+                localStorage.setItem("theme", e.target.value);
+              }}
             />
             <label for="kraken">Dark</label>
           </div>
